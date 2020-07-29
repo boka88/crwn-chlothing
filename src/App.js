@@ -11,7 +11,7 @@ import Header from './components/header/header.component'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { setCurrentUser } from './redux/user/user.actions'
 
-//Stao na folder 7. snimak 18. Section Review
+//Stao na folder 8. snimak 14. Add to Cart styling
 class App extends React.Component {
 
   unsubscribeFromAuth = null
