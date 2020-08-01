@@ -15,7 +15,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { setCurrentUser } from './redux/user/user.actions'
 import { selectCurrentUser } from './redux/user/user.selector'
 
-//Stao na folder 8. snimak 23. User Selectors
+//Stao na folder 8. snimak 28. Checkout Item Component - uradjeno
 class App extends React.Component {
 
   unsubscribeFromAuth = null
