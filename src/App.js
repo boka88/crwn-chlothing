@@ -15,7 +15,9 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { setCurrentUser } from './redux/user/user.actions'
 import { selectCurrentUser } from './redux/user/user.selector'
 
-//Krenuti na folder 10. Redux 2 snimak 1. Directory state Into Redux
+//Krenuti na folder 18. snimak 2. Promise Pattern
+
+// PROBLEM SA Folder 14. snimak 4. Deploying to Heroku!
 class App extends React.Component {
 
   unsubscribeFromAuth = null
