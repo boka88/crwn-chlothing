@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -18,20 +18,12 @@ import { checkUserSession } from './redux/user/user.actions'
 //Krenuti na folder 20. snimak 13. Sign Out with Sagas 
 
 // PROBLEM SA Folder 14. snimak 4. Deploying to Heroku!
-class App extends React.Component {
-
-  unsubscribeFromAuth = null
-
-  componentDidMount() {
-    const { checkUserSession } = this.props
-    checkUserSession()
-  } 
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth()
-  }
+const App = ({ checkUserSession, currentUser }) => {
   
-  render(){
+  useEffect(() => {
+    checkUserSession()
+  }, [checkUserSession])
+  
   return (
     <div>
       <Header />
@@ -43,7 +35,7 @@ class App extends React.Component {
          exact 
          path='/signin' 
          render={() => 
-          this.props.currentUser ? (
+          currentUser ? (
           <Redirect to='/' />
           ) : (
             <SignInAndSignUpPage />
@@ -53,7 +45,7 @@ class App extends React.Component {
         </Switch>
    </div>
   );
-}
+
 }
 
 const mapStateToProps = createStructuredSelector({
